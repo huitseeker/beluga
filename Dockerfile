@@ -25,8 +25,4 @@ ADD entrypoint.sh /entrypoint.sh
 ADD requirements.txt /tmp/requirements.txt
 RUN pip3 install -r /tmp/requirements.txt
 
-# Get Rust
-RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
-RUN echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
-
 ENTRYPOINT ["/entrypoint.sh"]
